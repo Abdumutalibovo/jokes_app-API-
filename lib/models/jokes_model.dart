@@ -7,6 +7,7 @@ class Jokes {
   String? delivery;
   Flags? flags;
   String? safe;
+  String? joke;
   int? id;
   String? lang;
 
@@ -19,18 +20,20 @@ class Jokes {
     required this.safe,
     required this.id,
     required this.lang,
+    required this.joke,
   });
 
   factory Jokes.fromJson(Map<String, dynamic> json) {
     return Jokes(
       category: json['category']??"",
       type: json['type']??"",
-      setup: json['setup']??"",
-      delivery: json['delivery']??"",
+      setup: json['setup']??json['category'],
+      delivery: json['delivery']??json['joke'],
       flags: Flags.fromJson(json['flags']),
       safe: json['json']??"",
       id: json['id']??0,
       lang: json['lang']??"",
+      joke: json['joke']??"",
     );
   }
 }

@@ -100,7 +100,7 @@ class _FunnyPageState extends State<FunnyPage> {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 12),
                       child: Text(
-                        jokes?[index].delivery.toString() ?? "",
+                        jokes?[index].delivery.toString() ?? jokes![index].joke.toString(),
                         style: const TextStyle(
                           fontSize: 20,
                           letterSpacing: 2,
